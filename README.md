@@ -81,3 +81,5 @@ Azure AD Workload Identity
 Service Mesh (like Istio or Linkerd)
 GitOps via Flux or ArgoCD
 Private clusters with Azure Firewall
+
+you can read the detailed artical here- https://nandiniduggineni.hashnode.dev/deploying-an-enterprise-grade-aks-cluster-with-helm-ingress-key-vault-and-monitoring
