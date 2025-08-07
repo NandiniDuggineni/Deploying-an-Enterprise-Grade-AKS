@@ -1,0 +1,9 @@
+AKS_CLIENT_ID=$(az aks show \
+  --resource-group aks-rg \
+  --name aks-cluster \
+  --query "identityProfile.kubeletidentity.clientId" -o tsv)
+
+az keyvault set-policy \
+  --name aksKeyVault \
+  --object-id $AKS_CLIENT_ID \
+  --secret-permissions get
