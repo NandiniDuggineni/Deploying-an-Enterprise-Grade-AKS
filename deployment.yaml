@@ -1,0 +1,22 @@
+containers:
+  - name: frontend
+    image: myregistry.azurecr.io/frontend:latest
+    ports:
+      - containerPort: 80
+
+  - name: backend
+    image: myregistry.azurecr.io/backend:latest
+    ports:
+      - containerPort: 5000
+    volumeMounts:
+      - name: secrets-store-inline
+        mountPath: "/mnt/secrets-store"
+        readOnly: true
+
+volumes:
+  - name: secrets-store-inline
+    csi:
+      driver: secrets-store.csi.k8s.io
+      readOnly: true
+      volumeAttributes:
+        secretProviderClass: "azure-kv-provider"
