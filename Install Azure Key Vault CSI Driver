@@ -1,0 +1,6 @@
+helm repo add csi-secrets-store https://azure.github.io/secrets-store-csi-driver/charts
+
+helm install csi-secrets-store csi-secrets-store/secrets-store-csi-driver \
+  --namespace kube-system
+
+kubectl apply -f https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/deployment/azure-provider.yaml
