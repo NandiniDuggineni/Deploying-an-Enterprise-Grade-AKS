@@ -1,0 +1,2 @@
+az keyvault create --name aksKeyVault --resource-group aks-rg --location eastus
+az keyvault secret set --vault-name aksKeyVault --name "DbPassword" --value "StrongPassword123!"
