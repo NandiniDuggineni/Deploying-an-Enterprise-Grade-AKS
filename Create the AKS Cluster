@@ -1,0 +1,10 @@
+az aks create \
+  --resource-group aks-rg \
+  --name aks-cluster \
+  --enable-managed-identity \
+  --enable-addons monitoring \
+  --enable-aad \
+  --node-count 3 \
+  --generate-ssh-keys \
+  --network-plugin azure \
+  --enable-network-policy
